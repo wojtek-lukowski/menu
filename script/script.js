@@ -1,5 +1,8 @@
 const allItems = document.getElementsByClassName('menu-item'); //all menu-items
 const allOpens = document.getElementsByClassName('menu-open'); //all menus
+const burger = document.getElementById('burger');
+const mainMenu = document.getElementById('menu-items');
+const close = document.getElementById('close');
 
 const menu = [];
 
@@ -55,11 +58,30 @@ activateMenu = (e) => {
   openMenu(clickedMenu);
 }
 
+showItems = () => {
+  mainMenu.style.display = 'flex';
+  burger.style.display = 'none';
+  close.style.display = 'inline-block';
+}
+
+hideItems = () => {
+  mainMenu.style.display = 'none';
+  burger.style.display = 'inline-block';
+  close.style.display = 'none';
+}
+
+// if (window.innerWidth > 500) {
+//   burger.style.display = 'none'
+// }
+
 //event listeners for menu items
 const menuItems = document.getElementsByClassName('menu-item');
   for (let i = 0; i < menuItems.length; i++) {
       menuItems[i].addEventListener('click', activateMenu);
   };
+
+burger.addEventListener('click', showItems);
+close.addEventListener('click', hideItems);
 
 closeMenu = () => {
 
