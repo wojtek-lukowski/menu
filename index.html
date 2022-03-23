@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>JavaScript Menu</title>
+</head>
+
+<body>
+
+  <div class="page">
+    <div class="header-wrapper">
+      <header>
+        <div class="page-menu">
+          <p class="menu-logo">LOGO</p>
+          <ul class="menu-items">
+            <li onclick="closeMenu()" id="menu-first-item">Subpage</li>
+            <li class="menu-item" id="menu-1">Menu-item 1</li>
+            <li class="menu-item" id="menu-2">Menu-item 2</li>
+            <li class="menu-item" id="menu-3">Menu-item 3</li>
+            <li class="menu-item" id="menu-4">Menu-item 4</li>
+          </ul>
+          <ul class="menu-icons">
+            <li><a class="svg" href="https://github.com/wojtek-lukowski/menu" target="_blank" rel="noopener">
+                <svg width="896" height="872" viewBox="0 0 896 872" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M447.6 3.74462e-05C200.3 -0.0999626 0 200.1 0 447.2C0 642.6 125.3 808.7 299.8 869.7C323.3 875.6 319.7 858.9 319.7 847.5V770C184 785.9 178.5 696.1 169.4 681.1C151 649.7 107.5 641.7 120.5 626.7C151.4 610.8 182.9 630.7 219.4 684.6C245.8 723.7 297.3 717.1 323.4 710.6C329.1 687.1 341.3 666.1 358.1 649.8C217.5 624.6 158.9 538.8 158.9 436.8C158.9 387.3 175.2 341.8 207.2 305.1C186.8 244.6 209.1 192.8 212.1 185.1C270.2 179.9 330.6 226.7 335.3 230.4C368.3 221.5 406 216.8 448.2 216.8C490.6 216.8 528.4 221.7 561.7 230.7C573 222.1 629 181.9 683 186.8C685.9 194.5 707.7 245.1 688.5 304.8C720.9 341.6 737.4 387.5 737.4 437.1C737.4 539.3 678.4 625.2 537.4 650C549.477 661.877 559.066 676.041 565.608 691.666C572.15 707.29 575.512 724.061 575.5 741V853.5C576.3 862.5 575.5 871.4 590.5 871.4C767.6 811.7 895.1 644.4 895.1 447.3C895.1 200.1 694.7 3.74462e-05 447.6 3.74462e-05V3.74462e-05Z"
+                    fill="#002F6C" />
+                </svg>
+              </a></li>
+            <li><a href="https://lukowski.io" target="_blank" rel="noopener"><svg id="profile-icon"
+                  xmlns="http://www.w3.org/2000/svg" width="9.95" height="14.5" viewBox="0 0 9.95 14.5">
+                  <path id="Icon_User"
+                    d="M84.074,4.331v-1.2A3.139,3.139,0,0,1,87.209,0h1.458A3.139,3.139,0,0,1,91.8,3.135V5.322a.233.233,0,0,1-.467,0V3.135A2.672,2.672,0,0,0,88.668.467H87.209a2.672,2.672,0,0,0-2.669,2.669v1.2a.233.233,0,0,1-.467,0ZM90.241,9.98a.969.969,0,0,1-.834-.468.233.233,0,1,0-.4.243,1.433,1.433,0,0,0,1.233.692,1.941,1.941,0,0,1,1.942,1.942v1.378a.233.233,0,0,0,.467,0V12.388A2.407,2.407,0,0,0,90.241,9.98Zm-1.176.681A1.77,1.77,0,0,1,86.4,10.21a1.434,1.434,0,0,0,.643-1.087,3.119,3.119,0,0,0,4-2.976c0-.016,0-1.612,0-1.628A.233.233,0,0,0,90.9,4.3a2.1,2.1,0,0,1-1.388-1.241.233.233,0,0,0-.4-.055A5.7,5.7,0,0,1,84.794,5.25a.233.233,0,0,0,.019.466,6.163,6.163,0,0,0,4.434-2.136,2.539,2.539,0,0,0,1.332,1.11V6.129a2.654,2.654,0,0,1-5.283.366.233.233,0,1,0-.462.064,3.121,3.121,0,0,0,1.75,2.388v.061a.973.973,0,0,1-.975.972A2.407,2.407,0,0,0,83.2,12.388v1.378a.233.233,0,0,0,.467,0V12.388a1.941,1.941,0,0,1,1.942-1.942,1.453,1.453,0,0,0,.365-.046,2.237,2.237,0,0,0,3.393.618.233.233,0,0,0-.3-.357Z"
+                    transform="translate(-82.949 0.25)" fill="#002F6C" stroke="#002F6C" stroke-width="0.5" />
+                </svg></a>
+            </li>
+            <!-- <li><svg xmlns="http://www.w3.org/2000/svg" width="14.875" height="14" viewBox="0 0 14.875 14">
+                <path id="Icon_Warenkorb"
+                  d="M14.789,15.818a.477.477,0,0,0-.371-.2l-9.227-.4a.477.477,0,0,0-.041.954l8.6.371-1.691,5.277H4.534l-1.36-7.4a.477.477,0,0,0-.295-.358L.652,13.181A.477.477,0,1,0,.3,14.07l1.98.778,1.384,7.535a.477.477,0,0,0,.47.391h.23l-.524,1.456a.4.4,0,0,0,.374.532h.368a1.432,1.432,0,1,0,2.128,0H9.834a1.432,1.432,0,1,0,2.128,0h.447a.4.4,0,1,0,0-.8H4.782l.429-1.193h7.2a.477.477,0,0,0,.454-.332l1.989-6.2A.476.476,0,0,0,14.789,15.818ZM5.648,26.353a.636.636,0,1,1,.636-.636A.637.637,0,0,1,5.648,26.353Zm5.25,0a.636.636,0,1,1,.636-.636A.637.637,0,0,1,10.9,26.353Z"
+                  transform="translate(0 -13.148)" fill="#777" />
+              </svg>
+            </li> -->
+          </ul>
+          <div class="menu-open" id="menu-1-open">
+            <p class="underline">Sumbenu 1</p>
+            <ul>
+              <div>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </div>
+              <div>
+                <li>Item 4</li>
+                <li>Item 5</li>
+                <li>Item 6</li>
+              </div>
+              <div>
+                <li>Item 7</li>
+                <li>Item 8</li>
+              </div>
+            </ul>
+          </div>
+          <div class="menu-open" id="menu-2-open">
+            <p class="underline">Sumbenu 2</p>
+            <ul>
+              Sumbenu 2
+            </ul>
+          </div>
+          <div class="menu-open" id="menu-3-open">
+            <p class="underline">Sumbenu 3</p>
+            <ul>
+              Sumbenu 3
+            </ul>
+          </div>
+          <div class="menu-open" id="menu-4-open">
+            <p class="underline">Sumbenu 4</p>
+            <ul>
+              Sumbenu 4
+            </ul>
+          </div>
+          <!-- <div class="page-menu-open-5 menu-open" id="menu-5-open">
+            <p class="underline">Hauptmenu</p>
+            <ul>
+              menu 5
+            </ul>
+          </div> -->
+          <svg class="burger" xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+            <g id="Burger_Menü" data-name="Burger Menü" transform="translate(-3)">
+              <path id="Path_214" data-name="Path 214"
+                d="M4.333,22H25.667a1.333,1.333,0,0,0,0-2.667H4.333a1.333,1.333,0,0,0,0,2.667Zm0-6.667H25.667a1.333,1.333,0,0,0,0-2.667H4.333a1.333,1.333,0,1,0,0,2.667ZM3,7.333A1.337,1.337,0,0,0,4.333,8.667H25.667a1.333,1.333,0,0,0,0-2.667H4.333A1.337,1.337,0,0,0,3,7.333Z"
+                transform="translate(0 -6)" fill="#777" />
+            </g>
+          </svg>
+
+        </div>
+        <div class="bread-crumbs">
+          <ul>
+            <li><svg id="Home_Icon" data-name="Home Icon" xmlns="http://www.w3.org/2000/svg" width="14" height="15.4"
+                viewBox="0 0 14 15.4">
+                <path id="Path_219" data-name="Path 219"
+                  d="M44.635,6.022,38,.14a.566.566,0,0,0-.758.011L30.982,6.033a.527.527,0,0,0-.168.384v8.449a.544.544,0,0,0,.553.535h4.605a.544.544,0,0,0,.553-.535V10.944H39.1v3.921a.544.544,0,0,0,.553.535h4.605a.544.544,0,0,0,.553-.535V6.416A.527.527,0,0,0,44.635,6.022Zm-.926,8.308h-3.5V10.409a.544.544,0,0,0-.553-.535H35.972a.544.544,0,0,0-.553.535V14.33h-3.5V6.643L37.641,1.27l6.068,5.382V14.33Z"
+                  transform="translate(-30.814 0)" fill="#fff" />
+              </svg>
+            </li>
+            <li>> Breadcrumbs</li>
+          </ul>
+        </div>
+        <div class="header-info">
+          <h1>Vanilla JavaScript menu</h1>
+          <p>Try and play. You can also use the code from my GitHub repository for your projects.</p>
+        </div>
+    </div>
+    </header>
+  </div>
+  <main>
+
+    <div class="content">
+      <p>Peter always saw the world in black and white. There were two choices for every situation and you had to choose
+        one of them. It was therefore terribly uncomfortable for him to spend time with Ashley. She saw the world in
+        shades of gray with hundreds of choices to choose from in every situation.
+      </p>
+      <p>It was a simple tip of the hat. Grace didn't think that anyone else besides her had even noticed it. It wasn't
+        anything that the average person would notice, let alone remember at the end of the day. That's why it seemed so
+        unbelievable that this little gesture would ultimately change the course of the world.
+      </p>
+      <p>The alarm went off at exactly 6:00 AM as it had every morning for the past five years. Barbara began her
+        morning and was ready to eat breakfast by 7:00 AM. The day appeared to be as normal as any other, but that was
+        about to change. In fact, it was going to change at exactly 7:23 AM.
+      </p>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+  </main>
+
+  <script src="./script/script.js"></script>
+</body>
+
+</html>
