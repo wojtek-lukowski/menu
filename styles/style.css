@@ -70,7 +70,6 @@ background-color: var(--white);
 
 .header-wrapper {
   background-color: var(--primary-color);
-  background-image: url('../img/bg.png');
   object-fit: cover;
 }
 
@@ -113,8 +112,12 @@ li:hover {
 
 a {
   cursor: pointer;
-  color: var(--text-color);
+  color: var(--white);
   text-decoration: none;
+}
+
+a:hover {
+  color: var(--text-color);
 }
 
 .menu-icons svg {
@@ -124,8 +127,8 @@ a {
 }
 
 .menu-icons svg path {
-fill: var(--primary-color);
-stroke: var(--primary-color);
+  fill: var(--primary-color);
+  stroke: var(--primary-color);
 }
 
 
@@ -194,16 +197,15 @@ display: none;
   left: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   min-height: 27.1rem;
   border-top: 1px solid var(--text-color);
   background-color: var(--white);
   z-index: 100;
   padding: 0 5rem;
-  
   display: none;
-  }
+}
 
 .underline::after {
   content: "";
@@ -212,7 +214,7 @@ display: none;
   background-color: var(--text-color);
   position: absolute;
   left: 5rem;
-  top: 8rem;
+  top: 5.5rem;
 }
 
 .menu-open ul {
@@ -224,8 +226,13 @@ display: none;
 }
 
 .menu-open ul div li {
-display: block;
-margin: 1.4rem 0;
+  display: block;
+  margin: 1.4rem 0;
+}
+
+.menu-open ul div li:hover {
+  cursor: pointer;
+  color: var(--primary-color);
 }
 
 .page-menu ul {
@@ -277,6 +284,21 @@ padding-left: 0;
 
   .mission-wrapper {
     padding: 12rem 0;
+  }
+
+  @keyframes open {
+   from {
+     min-height: 0;
+    }
+    to {
+      min-height: 27.1rem;
+   }
+  }
+
+  .menu-open {
+    height: 0;
+    animation-name: open;
+    animation-duration: .5s;
   }
 
 

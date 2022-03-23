@@ -45,6 +45,7 @@ activateMenu = (e) => {
      removeSelection();
      menu[submenu].selected = true;
      menu[submenu].menuElement.style.display = "flex";
+     menu[submenu].menuElement.style.animationPlayState = "running";
     }
   }
 
@@ -82,46 +83,6 @@ window.addEventListener('keydown', function(event){
 //close menu with a click on the page overlay
 document.getElementById('overlay').addEventListener('click', closeMenu);
 
-//header image
-const headerImg = document.getElementById('header-image');
-removeOverlay = () => {
-  headerImg.classList.remove('img-overlay');
-}
-
-putOverlay = () => {
-  headerImg.classList.add('img-overlay');
-}
-
-//3rd element hover
-const contentVideo = document.getElementById('content-video');
-const contentVideoH = document.getElementById('content-video-h');
-const contentVideoImg = document.getElementById('content-video-img');
-const contentVideoImgOverlay = document.getElementById('content-video-img-overlay');
-const contentVideoControls = document.getElementById('content-video-controls');
-const contentVideoArrow = document.getElementById('content-video-arrow');
-const contentVideoArrowBlue = document.getElementById('content-video-arrow-blue');
-
-contentVideoMouseEnter = () => {
-  contentVideoH.style.color = 'var(--primary-color)';
-  contentVideoImgOverlay.style.display = 'none';
-  contentVideoControls.style.color = 'var(--primary-color)';
-  contentVideoArrow.style.display = 'none';
-  contentVideoArrowBlue.style.display = 'inline-block';
-}
-
-contentVideoMouseLeave = () => {
-  contentVideoH.style.color = 'var(--text-color)';
-  contentVideoImgOverlay.style.display = 'block';
-  contentVideoControls.style.color = 'var(--text-color)';
-  contentVideoArrow.style.display = 'inline-block';
-  contentVideoArrowBlue.style.display = 'none';
-}
-
-if (window.innerWidth > 375) {
-  contentVideoImg.style.display = 'block';
-  contentVideo.addEventListener('mouseenter', contentVideoMouseEnter);
-  contentVideo.addEventListener('mouseleave', contentVideoMouseLeave);
-}
 
 //console warning: if the number of menu-items is different than the number of menus in HTML file
 checkMenu = () => {
