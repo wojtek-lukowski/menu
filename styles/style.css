@@ -367,7 +367,6 @@ padding-left: 0;
     height: 6rem !important;  }
 
   .menu-items {
-    
     align-self: flex-end;
     align-self: center;
     transform: translate(0, 0);
@@ -418,7 +417,7 @@ padding-left: 0;
   }
 
   .menu-open {
-    bottom: 0;
+  position: relative;
   }
 
 }

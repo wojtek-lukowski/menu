@@ -47,8 +47,20 @@ activateMenu = (e) => {
      menu[submenu].menuItemElement.style.color = 'var(--primary-color)';
      removeSelection();
      menu[submenu].selected = true;
-     menu[submenu].menuElement.style.display = "flex";
-     menu[submenu].menuElement.style.animationPlayState = "running";
+     if (window.innerWidth > 1000) {
+       menu[submenu].menuElement.style.display = "flex";
+       menu[submenu].menuElement.style.animationPlayState = "running";
+      } else {
+        console.log('small screen');
+        const openSubmenu = menu[submenu].menuItemElement;
+        const openMenu = menu[submenu].menuElement;
+        openMenu.style.display = 'block';
+        // const submenuText = document.createElement('p');
+        // openSubmenu.appendChild(submenuText);
+        // submenuText.innerHTML = 'test';
+        openSubmenu.appendChild(openMenu);
+        console.log(openSubmenu, openMenu);
+      }
     }
   }
 
@@ -71,6 +83,7 @@ hideItems = () => {
 }
 
 adjustMenu = () => {
+  closeMenu();
   if (window.innerWidth > 500) {
       burger.style.display = 'none';
       mainMenu.style.display = 'flex';
@@ -113,7 +126,6 @@ window.addEventListener('keydown', function(event){
 
 //close menu with a click on the page overlay
 document.getElementById('overlay').addEventListener('click', closeMenu);
-
 
 //console warning: if the number of menu-items is different than the number of menus in HTML file
 checkMenu = () => {
