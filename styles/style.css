@@ -164,6 +164,11 @@ a:hover {
   display: none;
 }
 
+.burger:hover,
+.close:hover {
+  cursor: pointer;
+}
+
 .burger line {
   stroke: var(--text-color);
 }
@@ -412,17 +417,8 @@ padding-left: 0;
     padding-bottom: 5rem;
   }
 
-  .mission-wrapper {
-    padding-top: var(--gap3);
-  }
-
-  .mission,
-  .mission-content {
-    width: var(--column14);
-  }
-  
-  .mission-content {
-    margin-top: 4rem;
+  .menu-open {
+    bottom: 0;
   }
 
 }
