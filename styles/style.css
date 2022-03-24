@@ -131,6 +131,11 @@ a:hover {
   stroke: var(--primary-color);
 }
 
+#Path_214 {
+  fill: var(--red);
+  stroke: var(--red);
+  color: var(--red);
+}
 
 #profile-icon {
   width: auto;
@@ -149,7 +154,7 @@ a:hover {
   align-items: flex-start;
   min-height: 11rem;
   color: var(--text-color);
-  padding: 0 1.9rem;
+  padding: 0 1.9rem 2rem;
   background-color: var(--white);
   z-index: 10;
   position: relative;
@@ -157,6 +162,10 @@ a:hover {
 
 .burger {
   display: none;
+}
+
+.burger line {
+  stroke: var(--text-color);
 }
 
 .menu-items {
@@ -305,29 +314,78 @@ padding-left: 0;
     display: none;
   }
 
+/* @keyframes burger-to-x-1 {
+  0% {transform: rotate(0);}
+  100% {transform: rotate(45deg);}
+} */
+
+/* @keyframes burger-to-x-2 {
+  0% {transform: rotate(0);}
+  100% {transform: rotate(-45deg);}
+}
+
+@keyframes burger-to-x-3 {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+#burger line:nth-of-type(1) {
+  animation: burger-to-x-3;
+  animation-duration: .1s;
+}
+
+#burger line:nth-of-type(2) {
+  animation: burger-to-x-1;
+  animation-duration: 1s;
+}
+
+#burger line:nth-of-type(3) {
+  animation: burger-to-x-2;
+  animation-duration: 1s;
+}
+
+#burger line:nth-of-type(4) {
+  animation: burger-to-x-3;
+  animation-duration: .1s;
+} */
+
 @media only screen and (max-width: 500px) {
 
   .burger {
     display: inline-block;
     margin-top: var(--gap3);
   }
+
   .page-menu {
     /* width: 100%; */
     margin: auto calc(var(--column) * -1);
     height: 6rem !important;  }
 
   .menu-items {
+    
+    align-self: flex-end;
+    align-self: center;
+    transform: translate(0, 0);
+    margin-top: 0;
+
     position : absolute;
-    top: 77%;
+    /* top: 77%; */
+    top: 100%;
     left: 0;
+    right: 0;
     background-color: var(--white);
   }
 
   ul.menu-items,
   ul.menu-icons {
     display: none;
-    height: 50rem;
+    /* height: 50rem; */
     width: 100%;
+  }
+
+  ul.menu-items li {
+    display: block !important;
+    padding: var(--gap3) 0;
   }
 
   .menu-logo {

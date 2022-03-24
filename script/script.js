@@ -59,7 +59,7 @@ activateMenu = (e) => {
 }
 
 showItems = () => {
-  mainMenu.style.display = 'flex';
+  mainMenu.style.display = 'block';
   burger.style.display = 'none';
   close.style.display = 'inline-block';
 }
@@ -70,9 +70,17 @@ hideItems = () => {
   close.style.display = 'none';
 }
 
-// if (window.innerWidth > 500) {
-//   burger.style.display = 'none'
-// }
+adjustMenu = () => {
+  if (window.innerWidth > 500) {
+      burger.style.display = 'none';
+      mainMenu.style.display = 'flex';
+      close.style.display = 'none';
+
+    } else {
+      burger.style.display = 'flex';
+      mainMenu.style.display = 'none';
+    }
+}
 
 //event listeners for menu items
 const menuItems = document.getElementsByClassName('menu-item');
@@ -82,6 +90,7 @@ const menuItems = document.getElementsByClassName('menu-item');
 
 burger.addEventListener('click', showItems);
 close.addEventListener('click', hideItems);
+window.addEventListener('resize', adjustMenu);
 
 closeMenu = () => {
 
@@ -109,7 +118,7 @@ document.getElementById('overlay').addEventListener('click', closeMenu);
 //console warning: if the number of menu-items is different than the number of menus in HTML file
 checkMenu = () => {
   if (allItems.length != allOpens.length) {
-    console.warn('There may be a problem, the number of menu-items is different than the number of menus.');
+    console.warn('The number of menu-items is different than the number of menus.');
   }
 }
 checkMenu();
