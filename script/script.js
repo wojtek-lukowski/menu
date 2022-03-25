@@ -77,6 +77,7 @@ showItems = () => {
 }
 
 hideItems = () => {
+  closeMenu();
   mainMenu.style.display = 'none';
   burger.style.display = 'inline-block';
   close.style.display = 'none';
