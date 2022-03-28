@@ -40,7 +40,14 @@ activateMenu = (e) => {
   if (menu[submenu].selected) {
     menu[submenu].selected = false;
      closeMenu();
-   } else {
+
+    if (window.innerWidth < 500) {
+      mainMenu.style.display = 'block';
+      overlay.style.display = 'block';
+      burger.style.display = 'none';
+      close.style.display = 'flex';
+    }
+  } else {
     menu.map( submenu => {
       submenu.menuItemElement.style.color = 'var(--text-color)'
     });
@@ -101,7 +108,6 @@ const menuItems = document.getElementsByClassName('menu-item');
   };
 
 closeMenu = () => {
-  // hideItems();
   document.getElementById('overlay').style.display = 'none';
 
   menu.map( submenu => {
@@ -109,7 +115,12 @@ closeMenu = () => {
     submenu.menuElement.style.display = 'none',
     submenu.menuItemElement.style.color = 'var(--text-color)'
   });
-  // document.getElementById('menu-first-item').style.color = 'var(--text-color)';
+
+  if (window.innerWidth < 500) {
+    mainMenu.style.display = 'none';
+    close.style.display = "none";
+    burger.style.display = "flex";
+  }
   }
 
 //close menu with Esc key
