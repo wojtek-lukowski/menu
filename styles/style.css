@@ -329,6 +329,12 @@ padding-left: 0;
   display: none;
 }
 
+.snippet {
+  width: 70%;
+}
+
+
+
 /* @keyframes burger-to-x-1 {
   0% {transform: rotate(0);}
   100% {transform: rotate(45deg);}
