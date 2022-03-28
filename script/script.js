@@ -3,6 +3,7 @@ const allOpens = document.getElementsByClassName('menu-open'); //all menus
 const burger = document.getElementById('burger');
 const mainMenu = document.getElementById('menu-items');
 const close = document.getElementById('close');
+const level2 = document.getElementsByClassName('level-2');
 
 const menu = [];
 
@@ -40,7 +41,7 @@ activateMenu = (e) => {
   if (menu[submenu].selected) {
     menu[submenu].selected = false;
      closeMenu();
-
+    //second click on menu item small screen
     if (window.innerWidth < 500) {
       mainMenu.style.display = 'block';
       overlay.style.display = 'block';
@@ -131,12 +132,21 @@ window.addEventListener('keydown', function(event){
   }
   });
 
+//small screen functionality
 burger.addEventListener('click', showItems);
 close.addEventListener('click', hideItems);
 window.addEventListener('resize', adjustMenu);
 
 //close menu with a click on the page overlay
 document.getElementById('overlay').addEventListener('click', closeMenu);
+
+//reload on level 2 click
+reLoad = () => {
+  location.reload();
+}
+for (let i = 0; i < level2.length; i++) {
+  level2[i].addEventListener('click', reLoad);
+}
 
 //console warning: if the number of menu-items is different than the number of menus in HTML file
 checkMenu = () => {
