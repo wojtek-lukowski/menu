@@ -11,18 +11,16 @@ second click on the currently opened item closes the menu
 * responsive - from 500px changes to hamburger with the same functionality for submenus
 * menu items and menus can be added or removed in HTML only (with proper classes) without the need to adjust JavaScript
 
-The menu-items should be added to the 
+The menu-items should be added as the list items to the list according to the following template:
 
 ```HTML
 <ul class="menu-items" id="menu-items">
+  <li class="menu-item" id="menu-1">Menu-item 1</li>
+  <li class="menu-item" id="menu-2">Menu-item 2</li>
+  <li class="menu-item" id="menu-3">Menu-item 3</li>
+  <li class="menu-item" id="menu-4">Menu-item 4</li>
+</ul>
   ```
-
-list as list items according to the following template: 
-
- ```HTML
- <li class="menu-item" id="menu-1">Menu-item 1</li>
- ```
-
  The menus should be added as
 
  ```HTML
