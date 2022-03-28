@@ -5,13 +5,14 @@ A simple menu, usually taken from some existing library, but I have built it fro
 Features:
 
 * opens when clicking on the element
+* menu-item color change on hover - color stays changed when the item is selected (menu open)
 * switches between the submenus
 second click on the currently opened item closes the menu
 * "Esc" and a click outside the menu closes the entire menu
 * responsive - from 500px changes to hamburger with the same functionality for submenus
 * menu items and menus can be added or removed in HTML only (with proper classes) without the need to adjust JavaScript
 
-The menu-items should be added as the list items to the list according to the following template:
+The menu-items should be added as the list items to the list, according to the following template:
 
 ```HTML
 <ul class="menu-items" id="menu-items">
@@ -33,4 +34,4 @@ The menu-items should be added as the list items to the list according to the fo
     </ul>
 </div>
 ```
-with level-s subitems (which need to be linked to the respective targets).
+with level-2 subitems (which need to be linked to the respective targets).
