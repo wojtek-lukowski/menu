@@ -459,7 +459,11 @@ footer {
 
   .menu-open ul li {
     padding: var(--gap2) 0 !important;
-    }  
+    }
+
+    .snippet {
+      width: 100%;
+    }
 
 }
 
