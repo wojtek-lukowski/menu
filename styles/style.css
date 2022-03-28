@@ -148,6 +148,14 @@ a:hover {
   line-height: 3.6rem;
 }
 
+.header-image {
+  position: absolute;
+  right: 0;
+  bottom: -4rem;
+  width: var(--column7);
+  max-height: 44.4rem;
+}
+
 .page-menu {
   display: flex;
   position: relative;
@@ -240,6 +248,8 @@ display: none;
 }
 
 .menu-open ul {
+  display: flex;
+  justify-content: space-between;
   margin-right: 17rem;
   padding-left: 0;
 }
