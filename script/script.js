@@ -51,7 +51,6 @@ activateMenu = (e) => {
        menu[submenu].menuElement.style.display = "flex";
        menu[submenu].menuElement.style.animationPlayState = "running";
       } else {
-        console.log('small screen');
         const openSubmenu = menu[submenu].menuItemElement;
         const openMenu = menu[submenu].menuElement;
         openMenu.style.display = 'block';
@@ -59,7 +58,6 @@ activateMenu = (e) => {
         // openSubmenu.appendChild(submenuText);
         // submenuText.innerHTML = 'test';
         openSubmenu.appendChild(openMenu);
-        console.log(openSubmenu, openMenu);
       }
     }
   }
@@ -102,19 +100,16 @@ const menuItems = document.getElementsByClassName('menu-item');
       menuItems[i].addEventListener('click', activateMenu);
   };
 
-burger.addEventListener('click', showItems);
-close.addEventListener('click', hideItems);
-window.addEventListener('resize', adjustMenu);
-
 closeMenu = () => {
+  // hideItems();
+  document.getElementById('overlay').style.display = 'none';
 
   menu.map( submenu => {
     submenu.selected = false,
     submenu.menuElement.style.display = 'none',
     submenu.menuItemElement.style.color = 'var(--text-color)'
   });
-  document.getElementById('menu-first-item').style.color = 'var(--text-color)';
-  document.getElementById('overlay').style.display = 'none';
+  // document.getElementById('menu-first-item').style.color = 'var(--text-color)';
   }
 
 //close menu with Esc key
@@ -124,6 +119,10 @@ window.addEventListener('keydown', function(event){
     closeMenu();
   }
   });
+
+burger.addEventListener('click', showItems);
+close.addEventListener('click', hideItems);
+window.addEventListener('resize', adjustMenu);
 
 //close menu with a click on the page overlay
 document.getElementById('overlay').addEventListener('click', closeMenu);
