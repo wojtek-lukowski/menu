@@ -345,7 +345,6 @@ footer {
 }
 
 
-
 /* @keyframes burger-to-x-1 {
   0% {transform: rotate(0);}
   100% {transform: rotate(45deg);}
@@ -463,10 +462,6 @@ footer {
 
   .menu-open ul li {
     padding: var(--gap2) 0 !important;
-  }
-
-  .snippet {
-      width: 100%;
   }
 
   .level-2 {

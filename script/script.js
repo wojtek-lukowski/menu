@@ -143,20 +143,6 @@ window.addEventListener('resize', adjustMenu);
 //close menu with a click on the page overlay
 document.getElementById('overlay').addEventListener('click', closeMenu);
 
-//reload on level 2 click
-
-// reLoad = () => {
-//   location.reload();
-// }
-
-// closeAll = () => {
-//   overlay.style.display = 'none';
-//   mainMenu.style.display = 'none';
-//   burger.style.display = 'inline-block';
-//   close.style.display = 'none';
-//   console.log('close all');
-// }
-
 for (let i = 0; i < level2.length; i++) {
   level2[i].addEventListener('click', closeMenu);
 }
