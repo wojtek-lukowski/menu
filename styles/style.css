@@ -259,7 +259,11 @@ display: none;
   padding: var(--gap) 0 !important;
 }
 
-.menu-open ul li:hover {
+.menu-open ul li a {
+  color: var(--text-color);
+}
+
+.menu-open ul li a:hover {
   cursor: pointer;
   color: var(--primary-color);
 }
@@ -330,7 +334,7 @@ padding-left: 0;
 }
 
 .snippet {
-  width: 70%;
+  width: 100%;
 }
 
 footer {
@@ -459,11 +463,15 @@ footer {
 
   .menu-open ul li {
     padding: var(--gap2) 0 !important;
-    }
+  }
 
-    .snippet {
+  .snippet {
       width: 100%;
-    }
+  }
+
+  .level-2 {
+    max-width: 50%;
+  }
 
 }
 

@@ -38,6 +38,11 @@ activateMenu = (e) => {
   }
 
   openMenu = (submenu) => {
+    //click on the level-2 on mobile
+    if (submenu == -1) {
+      overlay.style.display = 'none';
+    } else {
+
   if (menu[submenu].selected) {
     menu[submenu].selected = false;
      closeMenu();
@@ -52,23 +57,21 @@ activateMenu = (e) => {
     menu.map( submenu => {
       submenu.menuItemElement.style.color = 'var(--text-color)'
     });
-     menu[submenu].menuItemElement.style.color = 'var(--primary-color)';
-     removeSelection();
-     menu[submenu].selected = true;
-     if (window.innerWidth > 1000) {
-       menu[submenu].menuElement.style.display = "flex";
-       menu[submenu].menuElement.style.animationPlayState = "running";
+    menu[submenu].menuItemElement.style.color = 'var(--primary-color)';
+    removeSelection();
+    menu[submenu].selected = true;
+      if (window.innerWidth > 500) {
+        menu[submenu].menuElement.style.display = "flex";
+        menu[submenu].menuElement.style.animationPlayState = "running";
       } else {
         const openSubmenu = menu[submenu].menuItemElement;
         const openMenu = menu[submenu].menuElement;
         openMenu.style.display = 'block';
-        // const submenuText = document.createElement('p');
-        // openSubmenu.appendChild(submenuText);
-        // submenuText.innerHTML = 'test';
         openSubmenu.appendChild(openMenu);
       }
     }
   }
+}
 
   // establishing which menu item has been clicked and
   // calling the activateMenu function for the current instance
@@ -122,7 +125,7 @@ closeMenu = () => {
     close.style.display = "none";
     burger.style.display = "flex";
   }
-  }
+}
 
 //close menu with Esc key
 window.addEventListener('keydown', function(event){
@@ -141,11 +144,21 @@ window.addEventListener('resize', adjustMenu);
 document.getElementById('overlay').addEventListener('click', closeMenu);
 
 //reload on level 2 click
-reLoad = () => {
-  location.reload();
-}
+
+// reLoad = () => {
+//   location.reload();
+// }
+
+// closeAll = () => {
+//   overlay.style.display = 'none';
+//   mainMenu.style.display = 'none';
+//   burger.style.display = 'inline-block';
+//   close.style.display = 'none';
+//   console.log('close all');
+// }
+
 for (let i = 0; i < level2.length; i++) {
-  level2[i].addEventListener('click', reLoad);
+  level2[i].addEventListener('click', closeMenu);
 }
 
 //console warning: if the number of menu-items is different than the number of menus in HTML file

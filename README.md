@@ -27,11 +27,11 @@ The menu-items should be added as the list items to the list, according to the f
  ```HTML
 <div class="menu-open" id="menu-1-open">
   <p class="underline">Sumbenu 1</p>
-    <ul>
-        <li class="level-2">Item 1</li>
-        <li class="level-2">Item 2</li>
-        <li class="level-2">Item 3</li>
-    </ul>
+  <ul>
+    <li class="level-2"><a href="#">Item 1</a></li>
+    <li class="level-2"><a href="#">Item 2</a></li>
+    <li class="level-2"><a href="#">Item 3</a></li>
+  </ul>
 </div>
 ```
 with level-2 subitems (which need to be linked to the respective targets).
